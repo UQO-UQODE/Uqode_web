@@ -1,0 +1,27 @@
+
+
+front end envoie une requete au backend et le backend envoie au front end
+
+- Finir le front end 
+
+	-(s'assurer que les liens amènes aux bon endroit)
+	-Enlever les pages inutiles (features, about us avec des photos)
+	- S'assurer que le site soit en français au complet	
+	
+
+- controller (user / admin) (mvc)
+
+-BD 
+	-Finaliser l'architecture (contraintes)
+	
+	
+
+-Ajouter un readMe
+
+-Création d'évènement
+
+	-Vérifier dev.to pour ajouter des post dynamiques
+
+-Ajouter une chatBox All
+
+
