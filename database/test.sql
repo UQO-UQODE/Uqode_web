@@ -61,6 +61,33 @@ CREATE TABLE codingEvent (
     location_id int NOT NULL
 );
 
+--------ADDING THE FOREIGN KEY--------
+
+-- add the foreign key state_id to account referencing id from state --
+ALTER TABLE account
+ADD FOREIGN KEY (state_id) REFERENCES state (id);
+
+-- add the foreign key permission_id to account referencing id from permission --
+ALTER TABLE account
+ADD FOREIGN KEY (permission_id) REFERENCES permission (id);
+
+-- add the foreign key gender_id to account referencing id from gender --
+ALTER TABLE account
+ADD FOREIGN KEY (gender_id) REFERENCES gender (id);
+
+-- add the foreign key location_id to account referencing id from location --
+ALTER TABLE account
+ADD FOREIGN KEY (location_id) REFERENCES location (id);
+
+-- add the foreign key team_id to account referencing id from team --
+ALTER TABLE account
+ADD FOREIGN KEY (team_id) REFERENCES team (id);
+
+-- add the foreign key team_id to account referencing id from team --
+ALTER TABLE team
+ADD FOREIGN KEY (event_id) REFERENCES event (id);
+
+-------------------------------------------------------------------------------------------------
 
 -- insert gender types
 INSERT INTO gender (genderType) VALUE ('Men');
