@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const path = require('path');
 
 app.use(express.static('view'));
 
 app.get('/', (req, res) => {
 
-    res.sendFile('/HomePage.html')
-   // res.render('/HomePage.html')
-   console.log('dans app.get')
+    res.sendFile(path.join(__dirname, './view/HomePage.html'));
+
 });
   
 
