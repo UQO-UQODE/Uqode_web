@@ -1,17 +1,18 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const path = require('path');
+const db = require('./database/connection')
 
+//console.log(env.parsed.DATABASE);
 app.use(express.static('view'));
 
+
+//Routes
 app.get('/', (req, res) => {
-
     res.sendFile(path.join(__dirname, './view/HomePage.html'));
-
 });
   
 
-app.listen(port, () => {
-    console.log(`listen on port ${port}`)
+app.listen(3000, () => {
+    console.log(`listen on port 3000`)
 });
