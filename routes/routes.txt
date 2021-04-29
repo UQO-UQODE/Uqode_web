@@ -1,0 +1,9 @@
+uqode.code
+
+/ ou /home     =>  HomePage.html
+/faq           =>  faq.html
+/registration  =>  registration.html 
+/eventRegistration        => eventRegistration.html
+/projects      =>  projects.html
+/events        =>  events.html
+/admInterface  =>  admInterface.html
