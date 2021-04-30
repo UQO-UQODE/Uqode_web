@@ -18,16 +18,12 @@ const connect = () => {
   });
   connection.connect(function(err) {
     if (err) {
-      console.error('error connecting: ' + err.stack);
+      console.error('error connecting to the database');
       return;
     }
-    //console.log('connected as id ' + connection.threadId);
+    console.log(`connect to the database ${env.parsed.DB} on ${env.parsed.DB_HOST} with id: ${connection.threadId}` );
   });
-
-  console.log(`connect to the database ${env.parsed.DB} on ${env.parsed.DB_HOST}` );
 }
 
 exports.connect = connect;
-
-if(connection)
-  exports.connection = connection;
+exports.connection = connection;

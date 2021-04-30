@@ -1,6 +1,7 @@
 
+const sql = require('./database/db_connect.js').connection;
 
-const User = {
+var User = {
     
 }
 
