@@ -1,4 +1,7 @@
+
+
 /*This file is connecting to the database */
+
 
 const mysql = require('mysql');
 const env = require('dotenv').config();
@@ -26,4 +29,5 @@ connection.connect(function(err) {
 var sql = "INSERT INTO permission (title) VALUES ('je suis une permission') ";
 connection.query(sql);
 */
+
 module.exports = connection;
