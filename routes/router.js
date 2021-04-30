@@ -3,14 +3,21 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 
-// Home page route.
 
-router.get('/', function (req, res) {
+/*Guess routes*/
+router.get(['/','/home'], function (req, res) {
+  res.render('HomePage');
+});
 
-    res.sendFile(path.join(__dirname,'/../view/HomePage.html'));
-  })
+router.get('/login', function (req, res) {
+  res.render('connexion');
+});
 
 
+
+/*users routes */
+
+/*admin routes */
 
 
 module.exports = router;

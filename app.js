@@ -1,33 +1,20 @@
-<<<<<<< HEAD
-const express = require('express');
-const app = express();
+var express = require('express');
+const app = express(); 
+var routes = require ('./routes/router');
+const db = require('./database/db_connect.js');
 const path = require('path');
-const db = require('./database/db_connect')
 
-//console.log(env.parsed.DATABASE);
+//change default res.render path for view
+app.set('views', path.join(__dirname, '/view'));
+
+app.use(express.static('view'));
+app.set('view engine', 'hbs');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-=======
-var express = require('express');
-const app = express(); 
-var homePage = require ('./routes/router');
-var connexion = require ('./routes/connexionRoute');
 
->>>>>>> main
-app.use(express.static('view'));
-
-app.use('/', homePage); 
-
-<<<<<<< HEAD
-//Routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './view/HomePage.html'));
-});
-=======
-app.use('/co', connexion); 
->>>>>>> main
+app.use('/', routes);
 
 app.listen(3000, () => {
 

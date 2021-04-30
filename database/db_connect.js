@@ -22,12 +22,7 @@ connection.connect(function(err) {
     //console.log('connected as id ' + connection.threadId);
   });
 
-//console.log(` connect to the database with: ${env.parsed.DB_HOST}, ${env.parsed.DB_USER},${env.parsed.DB_PASSWORD},` );
+console.log(`connect to the database ${env.parsed.DB} on ${env.parsed.DB_HOST}` );
 
-//query test
-/*
-var sql = "INSERT INTO permission (title) VALUES ('je suis une permission') ";
-connection.query(sql);
-*/
 
 module.exports = connection;
