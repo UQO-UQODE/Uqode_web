@@ -1,13 +1,13 @@
 var express = require('express');
-const app = express();
-
+const app = express(); 
 var homePage = require ('./routes/router');
+var connexion = require ('./routes/connexionRoute');
 
-
+app.use(express.static('view'));
 
 app.use('/', homePage); 
 
-app.use(express.static('view'));
+app.use('/co', connexion); 
 
 app.listen(3000, () => {
 
