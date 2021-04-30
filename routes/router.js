@@ -1,14 +1,20 @@
 
-/*
-const route = require("../app");
+var express = require('express');
+var router = express.Router();
+const path = require('path');
+const app = require('../app');
 
-  route.get('/',function(req, res) {
 
-    //Envoie un fichier HTML
-    res.send('Allo');
 
-  });
 
-  module.export = route;
+// Home page route.
 
-  */
+router.get('/', function (req, res) {
+
+    
+    res.sendFile(path.join(__dirname,'/../view/HomePage.html'));
+  })
+
+module.exports = router;
+
+

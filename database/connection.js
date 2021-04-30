@@ -1,9 +1,14 @@
+
+
 /*This file is connecting to the database */
 
+/*
 const mysql = require('mysql');
 const env = require('dotenv').config();
 
 //db setup
+
+
 
 var connection = mysql.createConnection({
     host     : env.parsed.DB_HOST,
@@ -26,4 +31,7 @@ connection.connect(function(err) {
 var sql = "INSERT INTO permission (title) VALUES ('je suis une permission') ";
 connection.query(sql);
 */
+/*
 module.exports = connection;
+
+*/
