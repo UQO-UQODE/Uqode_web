@@ -13,6 +13,18 @@ router.get('/login', function (req, res) {
   res.render('connexion');
 });
 
+router.get('/faq', function (req, res) {
+  res.render('faq');
+});
+
+router.get('/contact', function (req, res) {
+  res.render('contact-us');
+});
+
+router.get('/registration', function (req, res) {
+  res.render('registration');
+});
+
 
 
 /*users routes */

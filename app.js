@@ -4,6 +4,7 @@ var routes = require ('./routes/router');
 const db = require('./database/db_connect.js');
 const path = require('path');
 
+
 //change default res.render path for view
 app.set('views', path.join(__dirname, '/view'));
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.use('/', routes);
+
 
 app.listen(3000, () => {
 
