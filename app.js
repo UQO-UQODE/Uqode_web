@@ -20,12 +20,14 @@ app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+//connection to the database
+db.connect();
+
 app.use('/', routes);
 
 /*
 Create the events
-TODO: looking for the reason of: failed to insert new eventError: ER_NO_SUCH_TABLE: Table 'uqode_db.condingevent' doesn't exist
-
+nom, startDate, endDate, description, locationId
 */
 app.post('/event_create', (req, res)  => {
 
