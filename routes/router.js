@@ -21,8 +21,14 @@ router.get('/contact', function (req, res) {
   res.render('contact-us');
 });
 
+
 router.get('/registration', function (req, res) {
   res.render('registration');
+});
+
+
+router.get('/create', function (req, res) {
+  res.render('createEvent');
 });
 
 
