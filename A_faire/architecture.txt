@@ -1,0 +1,23 @@
+/
+    /App
+        /controllers
+            guessController.js
+            userController.js
+            adminController.js
+    /database
+        BD_UQODE_WEB_ARCHITECTURE.jpeg
+        database.sql
+        db_connect.js
+        test.sql
+    /models
+        all models files (interraction btw database and code)
+    /Constants
+        Constants.js (contain all constants in the file like tables name of db...)
+    /Validation
+        validation.js (contain all validation things that we need to validation users)
+    /routes
+        router.js
+    /public
+     
+    /view
+
