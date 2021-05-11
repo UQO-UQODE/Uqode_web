@@ -1,3 +1,13 @@
+POST http://localhost:3000/event_create HTTP/1.1
+
+{
+    "eventName": "evenementTestRequete",
+    "startDate": "1984-04-02 08:30:20",
+    "endDate": "1984-04-02 08:30:20",
+    "description": "description"
+    
+}
+
 POST http://localhost:3000/createUser HTTP/1.1
 content-type: application/json
 
