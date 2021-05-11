@@ -2,6 +2,8 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
+const val = require('../validation/validate');
+const control_guess = require('../controllers/guess');
 
 
 /*Guess routes*/
@@ -13,25 +15,7 @@ router.get('/login', function (req, res) {
   res.render('connexion');
 });
 
-router.get('/faq', function (req, res) {
-  res.render('faq');
-});
-
-router.get('/contact', function (req, res) {
-  res.render('contact-us');
-});
-
-
-router.get('/registration', function (req, res) {
-  res.render('registration');
-});
-
-
-router.get('/create', function (req, res) {
-  res.render('createEvent');
-});
-
-
+router.post('/createUser', control_guess);
 
 /*users routes */
 

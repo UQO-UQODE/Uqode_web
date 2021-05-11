@@ -4,25 +4,26 @@
 
 
 const mysql = require('mysql');
-const env = require('dotenv').config();
+require('dotenv').config();
 
 var connection = null;
 
 //db setup
 const connect = () => { 
   var connection = mysql.createConnection({
-    host     : env.parsed.DB_HOST,
-    user     : env.parsed.DB_USER,
-    database : env.parsed.DB,
-    password : env.parsed.DB_PASSWORD
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    database : process.env.DB,
+    password : process.env.DB_PASSWORD
   });
   connection.connect(function(err) {
     if (err) {
-      console.error('error connecting to the database');
+      console.error(`error connecting to the database ${process.env.DB} `);
       return;
     }
-    console.log(`connect to the database ${env.parsed.DB} on ${env.parsed.DB_HOST} with id: ${connection.threadId}` );
+    console.log(`connect to the database ${process.env.DB} on ${process.env.DB_HOST} with id: ${connection.threadId}` );
   });
+  return connection;
 }
 
 exports.connect = connect;

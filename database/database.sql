@@ -77,3 +77,16 @@ ALTER TABLE location
   ADD FOREIGN KEY (account_id) REFERENCES account (id) ON DELETE CASCADE;
   
 -- -----------------------------------------------------------------------------------------------
+-- ------ADDING DEFAULT DATA --------
+INSERT INTO `state` (`id`, `title`) VALUES (NULL, 'Active'), 
+                                           (NULL, 'Inactive');
+
+INSERT INTO `permission` (`id`, `title`) VALUES (NULL, 'User'), 
+                                                (NULL, 'Admin');
+
+INSERT INTO `gender` (`id`, `genderType`) VALUES (NULL, 'Male'), 
+                                                 (NULL, 'Femelle'),
+                                                 (NULL, 'Other');
+
+-- -----------------------------------------------------------------------------------------------
+
