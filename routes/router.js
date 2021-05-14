@@ -16,6 +16,9 @@ router.get('/login', function (req, res) {
   res.render('connexion');
 });
 
+router.get('/faq', function (req, res) {
+  res.render('faq');
+});
 
 router.get('/registration', function (req, res) { //create an account
   res.render('registration');
@@ -23,6 +26,10 @@ router.get('/registration', function (req, res) { //create an account
 
 router.get('/contact-us', function (req, res) {
   res.render('contact-us');
+});
+
+router.get('/projects', function (req, res) {
+  res.render('projects');
 });
 
 router.post('/createUser', control_guess);
