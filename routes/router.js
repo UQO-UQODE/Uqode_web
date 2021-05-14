@@ -16,6 +16,11 @@ router.get('/login', function (req, res) {
   res.render('connexion');
 });
 
+
+router.get('/registration', function (req, res) { //create an account
+  res.render('registration');
+});
+
 router.get('/contact-us', function (req, res) {
   res.render('contact-us');
 });
