@@ -16,6 +16,10 @@ router.get('/login', function (req, res) {
   res.render('connexion');
 });
 
+router.get('/contact-us', function (req, res) {
+  res.render('contact-us');
+});
+
 router.post('/createUser', control_guess);
 
 
