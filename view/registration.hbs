@@ -23,14 +23,15 @@
 
 <body style="color: rgb(241,247,252);">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#" style="font-family: Alatsi, sans-serif;color: rgb(0,71,106);">UQODE</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/home" style="font-family: Alatsi, sans-serif;color: rgb(0,71,106);">UQODE</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="HomePage.html">aCCUEIL</a></li>
+                      <li class="nav-item"><a class="nav-link active" href="/home">aCCUEIL</a></li>
                     <li class="nav-item"><a class="nav-link" href="features.html">À PROPOS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">ÉVÈNEMENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-us.html">pROJETS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">nOUS CONTACTER</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">ÉVÈNEMENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact-us">nOUS CONTACTER</a></li>
                 </ul>
             </div>
         </div>
@@ -54,39 +55,42 @@
                         <div class="form-check" style="height: 31px;"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-1" style="color: rgb(0,71,106);">Femme</label></div>
                         <div class="form-check" style="height: 31px;"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1" style="color: rgb(0,71,106);">Autre</label></div>
                     </div><button class="btn btn-primary btn-block" type="submit" style="background: rgb(0,71,106);">Créer un compte</button>
-                    <div class="form-group" style="text-align: center;margin: 15px;height: -15px;"><label for="email" style="text-align: center;font-size: 12px;color: rgb(111, 122, 133);">Déja un compte ?</label></div>
+                    <div class="form-group" style="text-align: center;margin: 15px;height: -15px;"><label for="email" href="/login" style="text-align: center;font-size: 12px;color: rgb(111, 122, 133);">Déja un compte ?</label></div>
                 </form>
             </div>
         </section>
     </main>
-    <footer class="page-footer dark" style="color: rgb(0,71,106);background: rgb(0,71,106);">
+    <footer class="page-footer dark" style="background: rgb(0,71,106);">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h5>COMMENCER</h5>
+                    <h5>Commencer</h5>
                     <ul>
-                        <li style="color: rgb(255,255,255);">Accueil</li>
-                        <li style="color: rgb(255,255,255);">S'inscrire</li>
-                        <li style="color: rgb(255,255,255);">Se connecter</li>
+                        <li><a href="/home">Accueil</a></li>
+                        <li><a href="/registration">S'inscire</a></li>
+                        <li><a href="/login">Se connecter</a></li>
+
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>À propos</h5>
                     <ul>
                         <li><a href="#">But</a></li>
-                        <li><a href="#">Nous contacter</a></li>
+                        <li><a href="/projects">Projets</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Support</h5>
+                   
                     <ul>
-                        <li><a href="#">FAQ</a></li>
+                         <li><a href="/contact-us">Nous contacter</a></li>
+                        <li><a href="/faq">FAQ</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright" style="border-top-color: rgb(0,71,106);background: rgb(0,71,106);">
-            <p style="border-top-color: rgb(255,255,255);color: rgb(255,255,255);">@ UQODE</p>
+        <div class="footer-copyright" style="border-color: rgb(0,71,106);background: rgb(0,71,106);">
+            <p style="color: rgb(255,255,255);">© 2021 UQODE</p>
         </div>
     </footer>
     <script src="assets/js/jquery.min.js"></script>
