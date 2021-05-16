@@ -3,8 +3,8 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 const val = require('../validation/validate').validate;
-const control_guess = require('../controllers/guess');
-const control_admin = require('../controllers/admin');
+const controlGuess = require('../controllers/guess');
+const controlAdmin = require('../controllers/admin');
 const {check, validationResult} = require('express-validator');
 /*
 function test(){
@@ -43,11 +43,11 @@ router.get('/projects', function (req, res) {
   res.render('projects');
 });
 
-router.post('/createUser',val('user'),control_guess);
+router.post('/createUser',val('user'),controlGuess.createUser);
 
 
 
-router.post('/event_create', control_admin);
+router.post('/event_create', controlAdmin.createEvent);
 
   
 

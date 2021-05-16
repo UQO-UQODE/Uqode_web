@@ -51,4 +51,4 @@ const createEvent = (req, res)  => {
 */  
 };
 
-module.exports = createEvent;
+exports.createEvent = createEvent;
