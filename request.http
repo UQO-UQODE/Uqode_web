@@ -14,10 +14,9 @@ POST http://localhost:3000/createUser HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Denis",
-    "lastName":  "Dubois",
-    "email":  "DuboisLeDenis@gmail.com",
+    "lastName":  "Grand",
     "passphrase":  "Qkmofmowef87*!",
+    "email":  "grggrerge@gmail.com",
     "school": "UQO",
     "birthday": "1984-04-02 08:30:20"
 }
