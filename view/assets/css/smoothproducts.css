@@ -93,8 +93,8 @@ html, body {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgb(0,71,106);
-  background: rgb(0,71,106);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, .9);
   z-index: 1031;
   display: none;
   cursor: pointer;
@@ -120,7 +120,7 @@ html, body {
   color: #fff;
   padding: 14px;
   text-decoration: none;
-  background: rgb(0,71,106);
+  background: #000;
   border-radius: 25px;
   border: 2px solid #fff;
   width: 50px;
@@ -156,7 +156,7 @@ html, body {
 }
 
 #sp-prev:hover, #sp-next:hover {
-  background: rgb(0,71,106);
+  background: #444;
 }
 
 @media screen and (max-width: 400px) {
