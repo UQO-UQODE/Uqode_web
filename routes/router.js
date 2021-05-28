@@ -21,6 +21,8 @@ router.get('/registration', function (req, res) { //create an account
   res.render('registration');
 });
 
+
+
 router.get('/contact-us', function (req, res) {
   res.render('contact-us');
 });
@@ -37,9 +39,18 @@ router.get('/projects', function (req, res) {
   res.render('projects');
 });
 
+router.get('/event', function (req, res) { //create an account
+  res.render('event');
+});
+
+router.get('/createEventForm', function (req, res) { //create an account
+  res.render('createEventForm');
+});
+
 /*admin routes */
 
 router.post('/event_create', controlAdmin.createEvent);
+
 
 
 module.exports = router;
