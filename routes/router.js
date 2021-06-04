@@ -43,13 +43,32 @@ router.get('/event', function (req, res) { //create an account
   res.render('event');
 });
 
-router.get('/createEventForm', function (req, res) { //create an account
-  res.render('createEventForm');
-});
+
 
 /*admin routes */
 
 router.post('/event_create', controlAdmin.createEvent);
+
+router.get('/createEventForm', function (req, res) { //create an account
+  res.render('createEventForm');
+});
+
+router.get('/createProjectForm', function (req, res) { //create an account
+  res.render('createProjectForm');
+});
+
+
+router.get('/AdminAccounts', function (req, res) { //create an account
+  res.render('AdminDashboardAccount');
+});
+
+router.get('/AdminEvents', function (req, res) { //create an account
+  res.render('AdminDashboardCodingEvent');
+});
+
+router.get('/AdminTeam', function (req, res) { //create an account
+  res.render('AdminDashboardTeam');
+});
 
 
 
