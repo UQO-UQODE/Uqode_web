@@ -1,12 +1,53 @@
+const val = require('../validation/validate').validate;
 
 module.exports = (sequelize, DataTypes) => {
   
   const Account = sequelize.define("account", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    firstName: DataTypes.STRING,
-    lastName:  DataTypes.STRING,
-    email:  DataTypes.STRING,
-    passphrase:  DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      validate:{
+        len: {
+          args:[2,30],
+          msg:"Your first name must be between 2 and 30 characters"
+        }
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      validate:{
+        len: {
+          args:[2,30],
+          msg:"Your last name must be between 2 and 30 characters"
+        }
+      },
+    },
+    email: {
+      type:DataTypes.STRING,
+      validate: {
+        isUnique: (value, next) => {
+          Account.findAll({
+            where: { email: value },
+            attributes: ['id'],
+          })
+            .then((account) => {
+              if (account.length != 0)
+                next(new Error('Email address already in use!'));
+              next();
+            })
+            //.catch((onError) => console.log("LE EREEEEEEEYR: "+onError));
+        },
+      },
+    },
+    passphrase:  {
+      type: DataTypes.STRING,
+      validation:{
+        is:{
+          args:/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-.\/:;<=>?@[\]^_`{|}~]).{8,16}/,
+          msg:"Your password must have at least one capitalize letter, on minimalize letter, one special character and btw 8-16"
+        }
+      },
+    },
     school: DataTypes.STRING,
     birthday: DataTypes.DATE,
     state_id: {

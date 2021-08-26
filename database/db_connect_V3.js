@@ -6,7 +6,7 @@ const connect = ()=>{
     host: 'localhost',
     dialect:  'mysql',
   });
-      
+  
 }
 
 module.exports = connect;

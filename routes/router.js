@@ -2,11 +2,10 @@
 var express = require('express');
 var router = express.Router();
 const path = require('path');
-const val = require('../validation/validate').validate;
+const validation = require('../validation/validate').validate;
 const controlGuess = require('../controllers/guess');
 const controlAdmin = require('../controllers/admin');
 const {check, validationResult} = require('express-validator');
-
 
 /*Guess routes*/
 router.get(['/','/home'], function (req, res) {
@@ -25,13 +24,13 @@ router.get('/contact-us', function (req, res) {
   res.render('contact-us');
 });
 
-router.post('/createUser',val('user'),controlGuess.createUser);
-
-/*users routes */
+router.post('/createUser',validation.user(),controlGuess.createUser);
 
 router.get('/login', function (req, res) {
   res.render('connexion');
 });
+/*users routes */
+
 
 router.get('/projects', function (req, res) {
   res.render('projects');
