@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Article-List.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
@@ -25,34 +26,33 @@
         <div class="container"><a class="navbar-brand logo" href="/home" style="font-family: Alatsi, sans-serif;color: rgb(0,71,106);">UQODE</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
-                      <li class="nav-item"><a class="nav-link active" href="/home">aCCUEIL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="features.html">À PROPOS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home">aCCUEIL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="/login">Connexion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">pROJETS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about-us.html">ÉVÈNEMENTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/projects">pROJETS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/event">ÉVÈNEMENTS</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact-us">nOUS CONTACTER</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="page contact-us-page">
-        <section class="clean-block clean-form dark">
-            <div class="container">
+        <section class="clean-block clean-form dark" style="background: rgb(241, 247, 252);">
+            <div class="container" style="border-color: rgb(0,71,106);">
                 <div class="block-heading">
-                    <h2 class="text-info">Contact Us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                    <h2 class="text-info" style="color: rgb(0,71,106);filter: brightness(72%);">Contactez-Nous</h2>
                 </div>
-                <form>
-                    <div class="form-group"><label>Name</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Subject</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Email</label><input class="form-control" type="email"></div>
-                    <div class="form-group"><label>Message</label><textarea class="form-control"></textarea></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
+                <form style="border-top-color: rgb(0,71,106);">
+                 
+                    <div class="form-group"><label style="color: rgb(0,71,106);">Sujet</label><input class="form-control" type="text"></div>
+                    <div class="form-group"><label style="color: rgb(0,71,106);">Email</label><input class="form-control" type="email"></div>
+                    <div class="form-group"><label style="color: rgb(0,71,106);">Message</label><textarea class="form-control"></textarea></div>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: rgb(0,71,106);">Envoyer</button></div>
                 </form>
             </div>
         </section>
     </main>
-    <footer class="page-footer dark" style="background: rgb(0,71,106);">
+  <footer class="page-footer dark" style="background: rgb(0,71,106);">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -67,15 +67,15 @@
                 <div class="col-sm-3">
                     <h5>À propos</h5>
                     <ul>
-                        <li><a href="#">But</a></li>
+                        <li><a href="*event">Évènements</a></li>
                         <li><a href="/projects">Projets</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Support</h5>
-                   
+                    
                     <ul>
-                         <li><a href="/contact-us">Nous contacter</a></li>
+                        <li><a href="/contact-us">Nous contacter</a></li>
                         <li><a href="/faq">FAQ</a></li>
                     </ul>
                 </div>

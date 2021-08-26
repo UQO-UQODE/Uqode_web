@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - UQODE</title>
+    <title>Register - UQODE</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi">
@@ -14,14 +14,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Andika">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Data-Table-1.css">
+    <link rel="stylesheet" href="assets/css/Data-Table.css">
+    <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
 </head>
 
 <body>
-      <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="/home" style="font-family: Alatsi, sans-serif;color: rgb(0,71,106);">UQODE</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
@@ -35,19 +42,50 @@
             </div>
         </div>
     </nav>
-    <div class="login-clean" style="padding: 144px 0px;background: rgb(241, 247, 252);">
-        <form method="post" style="padding: 41px;margin: 3;transform: scale(1);">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><i class="icon ion-android-person" style="color: rgb(0,71,106);"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Mot de passe"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: rgb(0,71,106);">Connexion</button>
-            <button class="btn btn-primary btn-block" href="/registration" type="submit" style="background: rgb(0,71,106);">Créer un compte</button>
-            </div>
-            <a class="forgot" href="#" style="color: rgb(111, 122, 133);">Mote de passe oublié ?</a>
-        </form>
-    </div>
-    <main class="page landing-page"></main>
+    <main class="page registration-page">
+        <section class="clean-block clean-form dark">
+            <div class="container" style="background: rgb(241, 247, 252);">
+                <div class="block-heading">
+                    <h2 class="text-info" style="color: rgb(0,71,106);border-top-color: rgb(0,71,106);filter: brightness(74%);">Tableau des&nbsp; codingEvents</h2>
+                </div>
+            </div><table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Participants</th>
+        
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td>$320,800</td>
+            </tr>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td>$320,800</td>
+            </tr>
+           
+        </tbody>
+    </table>
+        </section>
+    </main>
     <footer class="page-footer dark" style="background: rgb(0,71,106);">
         <div class="container">
             <div class="row">
@@ -83,7 +121,11 @@
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/smoothproducts.min.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
