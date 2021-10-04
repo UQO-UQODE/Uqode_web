@@ -1,4 +1,6 @@
 Something go wrong, contact the administrators
-<p>
-    {{error}}
-</p>
+<ul>
+    {{#each errors}}
+        <li>{{param}} {{msg}}</li>
+    {{/each}}
+</ul>

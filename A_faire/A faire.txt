@@ -1,5 +1,7 @@
+****
+En court: Creation des comptes et des permissions
 
-
+****
 front end envoie une requete au backend et le backend envoie au front end
 
 - Finir le front end 

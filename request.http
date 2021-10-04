@@ -14,16 +14,23 @@ POST http://localhost:3000/createUser HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "eeeeee",
-    "lastName":  "Brunel",
-    "passphrase":  "ab",
-    "confirmPassphrase": "efkmwrefrme@fkef*!!",
-    "email":  "newE3ewedm2effwefail@gmail.com",
+    "firstname": "AAA",
+    "lastname":  "B2323",
+    "passphrase":  "Password123*!",
+    "confirmpassphrase": "Password123*!",
+    "email":  "newEwe3dm211ef223fwewefail@gmail.com",
     "school": "UQO",
     "birthday": "1984-04-02 08:30:20"
 }
 
 
+###
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
 
+{
+    "firstName": "test111",
+    "lastName": "Test222"
+}
 
 //GET https://example.com/comments/1 HTTP/1.1

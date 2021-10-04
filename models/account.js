@@ -4,23 +4,13 @@ module.exports = (sequelize, DataTypes) => {
   
   const Account = sequelize.define("account", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    firstName: {
+    firstName:{
       type: DataTypes.STRING,
-      validate:{
-        len: {
-          args:[2,30],
-          msg:"Your first name must be between 2 and 30 characters"
-        }
-      },
+      validate:val.firstName()
     },
     lastName: {
       type: DataTypes.STRING,
-      validate:{
-        len: {
-          args:[2,30],
-          msg:"Your last name must be between 2 and 30 characters"
-        }
-      },
+      validate:val.lastName()
     },
     email: {
       type:DataTypes.STRING,
@@ -38,15 +28,17 @@ module.exports = (sequelize, DataTypes) => {
             //.catch((onError) => console.log("LE EREEEEEEEYR: "+onError));
         },
       },
+      //validate: val.email()
     },
     passphrase:  {
       type: DataTypes.STRING,
-      validation:{
+      /*validation:{
         is:{
           args:/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-.\/:;<=>?@[\]^_`{|}~]).{8,16}/,
           msg:"Your password must have at least one capitalize letter, on minimalize letter, one special character and btw 8-16"
         }
-      },
+      },*/
+      validation: val.passphrase()
     },
     school: DataTypes.STRING,
     birthday: DataTypes.DATE,

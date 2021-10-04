@@ -6,23 +6,37 @@ const { DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 
+const getHome = (req, res) =>{
+    res.render('HomePage');
+}
+
+const getFaq = (req, res) =>{
+    res.render('faq');
+}
+
+const getRegistration = (req, res) =>{
+    res.render('registration');
+}
+
+const getContactUs = (req, res) =>{
+    res.render('contact-us');
+}
+
+const getLogin = (req, res) =>{
+    res.render('connexion');
+}
+
 //create user
 const createUser =  (req,res) =>{
+
+    console.log(`Lets create the user ${req.body.firstName}`);
+    var connection = connect_db();
+
+    const account = Account(connection,DataTypes);
     
-    //express validator error
-    const errors = validationResult(req);
-    console.log(errors);
-    if(!errors.isEmpty()){
-        console.log('error!!!');
-        console.log(errors);
-        res.render('error');
-        //res.status(400).send('Bad Request');
-    }else{
-        console.log(`Lets create the user ${req.body.firstName}`);
-        var connection = connect_db();
-        
-        const account = Account(connection,DataTypes);
-        
+    const alreadyExist = account.findOne({ where: { email: req.body.email } })
+    
+    if(alreadyExist === null){
         account.create({
             firstName: req.body.firstName,
             lastName:  req.body.lastName,
@@ -38,7 +52,6 @@ const createUser =  (req,res) =>{
             console.log(connection.ValidationError);
             connection.close();
         })
-        
         .then(()=>{
             res.render('HomePage');
         })
@@ -46,10 +59,35 @@ const createUser =  (req,res) =>{
             /*console.log("alloooooooooooooooooooooooooooooooooooooooooooo");
             console.log(typeof err);*/
             //console.log("DB ERROR: " + err);
-            res.render('error',{error:err});
+            console.log('ERRRRRROOOR 2');
+            console.log(err)
+            connection.close();
+            
+            res.render('error',{errors:err});
         });
-
+    }else{
+        res.render('error');
     }
+    
 }
 
-exports.createUser = createUser;
+const logUser = (req,res) =>{
+    
+    //Get data and log the user
+    var connection = connect_db();
+
+    connection.where
+
+
+    res.render('faq');
+}
+
+module.exports = {
+    getHome:getHome,
+    getFaq:getFaq,
+    getRegistration:getRegistration,
+    getContactUs:getContactUs,
+    getLogin:getLogin,
+    createUser:createUser,
+    logUser:logUser
+}
