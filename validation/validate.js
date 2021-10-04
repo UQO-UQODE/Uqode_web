@@ -1,4 +1,3 @@
-//validation for account model
 
 const {check} = require('express-validator');
 const { DataTypes } = require('sequelize');

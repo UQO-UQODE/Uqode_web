@@ -5,40 +5,16 @@ module.exports = (sequelize, DataTypes) => {
   const Account = sequelize.define("account", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     firstName:{
-      type: DataTypes.STRING,
-      validate:val.firstName()
+      type: DataTypes.STRING
     },
     lastName: {
-      type: DataTypes.STRING,
-      validate:val.lastName()
+      type: DataTypes.STRING
     },
     email: {
-      type:DataTypes.STRING,
-      validate: {
-        isUnique: (value, next) => {
-          Account.findAll({
-            where: { email: value },
-            attributes: ['id'],
-          })
-            .then((account) => {
-              if (account.length != 0)
-                next(new Error('Email address already in use!'));
-              next();
-            })
-            //.catch((onError) => console.log("LE EREEEEEEEYR: "+onError));
-        },
-      },
-      //validate: val.email()
+      type:DataTypes.STRING
     },
     passphrase:  {
-      type: DataTypes.STRING,
-      /*validation:{
-        is:{
-          args:/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!"#$%&'()*+,-.\/:;<=>?@[\]^_`{|}~]).{8,16}/,
-          msg:"Your password must have at least one capitalize letter, on minimalize letter, one special character and btw 8-16"
-        }
-      },*/
-      validation: val.passphrase()
+      type: DataTypes.STRING
     },
     school: DataTypes.STRING,
     birthday: DataTypes.DATE,

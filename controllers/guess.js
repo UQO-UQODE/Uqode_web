@@ -56,17 +56,11 @@ const createUser =  (req,res) =>{
             res.render('HomePage');
         })
         .catch((err) =>{
-            /*console.log("alloooooooooooooooooooooooooooooooooooooooooooo");
-            console.log(typeof err);*/
-            //console.log("DB ERROR: " + err);
-            console.log('ERRRRRROOOR 2');
-            console.log(err)
             connection.close();
-            
             res.render('error',{errors:err});
         });
     }else{
-        res.render('error');
+        res.render('connexion');
     }
     
 }
