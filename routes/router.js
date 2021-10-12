@@ -18,13 +18,13 @@ router.route('/login')
   .post(controlGuess.logUser)
 
 /*users routes */
-/*
+
 router.get('/projects', function (req, res) {
   res.render('projects');
 });
 
 router.get('/event', function (req, res) {
-  res.render('event');
+  res.render('AdminDashboardAccount');
 });
 
 /*admin routes */

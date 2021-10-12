@@ -1,0 +1,39 @@
+# TODO
+
+- [ ] HomePage
+    - [ ] Github link => go to last project
+    - [ ] UQODE le mettre a gauche
+    - [ ] Ajouter les nouvelles pages (DashboardAccount, DashboardEvent)
+- [ ] FAQ
+    - [ ] Add or remove question (only adm) buttons add and remove
+- [ ] login
+    - [ ] Create User
+    - [ ] Login
+    - [ ] Disconnect
+    - [ ] Forget Password
+- [ ] projects
+    - [ ] Handlebars dynamiser les events (afficher data envoyé)
+    - [ ] Add state to project table in Database (En cours, fini)
+    - [ ] Add Project Captain in DB
+    - [ ] Add button for Captain Project to modify Description and state (and adm)
+    - [ ] Create Project only by adm (Button in the view) and design a capitain
+    - [ ] Delete Project adm and Captain
+- [ ] EVENT
+    - [ ] In DB, Add lieux, date, Description, max team up
+    - [ ] Handlebars add title
+    - [ ] Handlebard dynamise avec une boucle
+    - [ ] Create Event => adm with button in the view
+    - [ ] Delete Event => adm with button in the view
+    - [ ] Modify Event data
+    - [ ] Normal user can subscribe
+- [ ] AdminDashboardAccount
+    - [ ] Only admin can see this tab 
+    - [ ] 3 buttons => Archiver, delete, mettre Adm
+    - [ ] HandleBars print user information
+- [ ] AdminDashboardEvent
+    - [ ] Only adm can see this tab
+    - [ ] HandleBars can print all captain of the team with mail and team name...
+    - [ ] Can send a mail to everyone about rules...
+- [ ] contact-us
+    - [ ] Only add UQODE mail in the middle 
+
