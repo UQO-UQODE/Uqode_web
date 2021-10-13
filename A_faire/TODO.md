@@ -7,7 +7,7 @@
 - [ ] FAQ
     - [ ] Add or remove question (only adm) buttons add and remove
 - [ ] login
-    - [ ] Create User
+    - [x] Create User
     - [ ] Login
     - [ ] Disconnect
     - [ ] Forget Password
@@ -36,4 +36,7 @@
     - [ ] Can send a mail to everyone about rules...
 - [ ] contact-us
     - [ ] Only add UQODE mail in the middle 
+
+- [ ] Add user name in the nav bar a gauche completement
+- [ ] RENAME VIEW TO VIEWS
 

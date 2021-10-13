@@ -24,7 +24,7 @@ router.get('/projects', function (req, res) {
 });
 
 router.get('/event', function (req, res) {
-  res.render('AdminDashboardAccount');
+  res.render('event');
 });
 
 /*admin routes */
