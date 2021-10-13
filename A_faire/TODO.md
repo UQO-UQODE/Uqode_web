@@ -37,6 +37,7 @@
 - [ ] contact-us
     - [ ] Only add UQODE mail in the middle 
 
+- [ ] DATABASE
 - [ ] Add user name in the nav bar a gauche completement
 - [ ] RENAME VIEW TO VIEWS
 
