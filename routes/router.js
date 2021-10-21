@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 const path = require('path');
@@ -16,7 +15,9 @@ router.post('/createUser',auth.signup, controlGuess.createUser);
 router.route('/login')
   .get(controlGuess.getLogin)
   .post(controlGuess.logUser)
-
+router.route('/logout')
+  .post(controlGuess.logout)
+  
 /*users routes */
 
 router.get('/projects', function (req, res) {

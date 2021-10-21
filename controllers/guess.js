@@ -5,8 +5,20 @@ const connect_db = require('../database/db_connect_V3');
 const { DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
+const session = require('express-session');
+
+var ssn;
 
 const getHome = (req, res) =>{
+    ssn = req.session;
+    if(req.session.page_views){
+        req.session.page_views++;
+        console.log("You visited this page " + req.session.page_views + " times");
+     } else {
+        req.session.page_views = 1;
+        console.log("Welcome to this page for the first time!");
+     }
+     console.log(ssn)
     res.render('HomePage');
 }
 
@@ -65,15 +77,34 @@ const createUser =  (req,res) =>{
     
 }
 
-const logUser = (req,res) =>{
-    
-    //Get data and log the user
+const logUser = async (req,res) =>{
+    console.log('Lets login !')
+    ssn = req.session;
+    //Get user data (id, permission)
     var connection = connect_db();
-
-    connection.where
-
-
+    const account = Account(connection,DataTypes);
+    
+    await account.findOne({
+        where: { email: req.body.email }
+    })
+    .then( (user) => {
+        
+        req.session.user = user
+    })
+    .catch((err)=>{
+        res.send('error',{errors:err})
+    })
     res.render('faq');
+}
+
+const logout = (req, res) => {
+    req.session.destroy(function(err) {
+        if(err) {
+          console.log(err);
+        } else {
+          res.redirect('/');
+        }
+      }); 
 }
 
 module.exports = {
@@ -83,5 +114,6 @@ module.exports = {
     getContactUs:getContactUs,
     getLogin:getLogin,
     createUser:createUser,
-    logUser:logUser
+    logUser:logUser,
+    logout:logout
 }

@@ -8,8 +8,8 @@
     - [ ] Add or remove question (only adm) buttons add and remove
 - [ ] login
     - [x] Create User
-    - [ ] Login
-    - [ ] Disconnect
+    - [x] Login
+    - [x] Disconnect
     - [ ] Forget Password
 - [ ] projects
     - [ ] Handlebars dynamiser les events (afficher data envoyé)

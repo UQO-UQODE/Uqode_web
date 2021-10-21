@@ -1,3 +1,6 @@
+GET http://localhost:3000/home HTTP/1.1
+
+###
 POST http://localhost:3000/event_create HTTP/1.1
 content-type: application/json
 
@@ -29,8 +32,13 @@ POST http://localhost:3000/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "test111",
-    "lastName": "Test222"
+    "id": 1,
+    "firstName": "Jean",
+    "lastName": "Test222",
+    "email": "Ricard@gmail.com"
 }
+
+###
+POST http://localhost:3000/logout HTTP/1.1
 
 //GET https://example.com/comments/1 HTTP/1.1

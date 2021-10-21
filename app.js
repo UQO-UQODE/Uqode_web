@@ -5,6 +5,15 @@ var routes = require ('./routes/router');
 //const db2 = require('./database/db_connect_V2.js');
 const path = require('path');
 //const val = require('validation/validate');
+const session = require('express-session')
+
+//Session variable
+app.set('trust proxy',1)
+app.use(session({
+    secret:"keyboard cat",
+    resave:false,
+    saveUninitialized: true
+}))
 
 //change default res.render path for view
 app.set('views', path.join(__dirname, '/view'));
