@@ -42,10 +42,17 @@
                     <h2 class="text-info" style="color: rgb(0,71,106);border-color: rgb(0,71,106);filter: brightness(65%);">FAQ</h2>
                 </div>
                 <div class="block-content">
+                    {{#each questions}}
+                        <div class="faq-item">
+                            <h4 class="question" style="color: rgb(0,71,106);">{{question}}</h4>
+                            <div class="answer">
+                                <p>{{response}}</p>
+                            </div>
+                        </div>
+                    {{/each}}
                     <div class="faq-item">
                         <h4 class="question" style="color: rgb(0,71,106);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
                         <div class="answer">
-                            <p>Profile de  {{firstname}}  {{lastname}}</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>

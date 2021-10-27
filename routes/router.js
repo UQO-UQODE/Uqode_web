@@ -9,7 +9,7 @@ const {check, validationResult} = require('express-validator');
 
 /*Guess routes*/
 router.get(['/','/home'], controlGuess.getHome);
-router.get('/faq', controlGuess.getFaq);
+//router.get('/faq', controlGuess.getFaq);
 router.get('/contact-us', controlGuess.getContactUs);
 router.post('/createUser',auth.signup, controlGuess.createUser);
 router.route('/login')
@@ -17,6 +17,12 @@ router.route('/login')
   .post(controlGuess.logUser)
 router.route('/logout')
   .post(controlGuess.logout)
+
+router.route('/faq')
+  .get(controlGuess.getFaq)
+  .put(controlGuess.putFaq)
+  .patch(controlGuess.patchFaq)
+  .delete(controlGuess.deleteFaq)
   
 /*users routes */
 

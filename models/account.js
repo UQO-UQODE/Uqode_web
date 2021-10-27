@@ -39,13 +39,13 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    team_id: {
+    /*team_id: {
       type: DataTypes.INTEGER,
       references:{
         model:'team',
         key: 'id'
       }
-    },
+    },*/
     },
     {
       timestamps: false,

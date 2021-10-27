@@ -39,4 +39,34 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/logout HTTP/1.1
 
+###
+
+GET http://localhost:3000/faq HTTP/1.1
+###
+PUT http://localhost:3000/faq HTTP/1.1
+Content-Type: application/json
+
+{
+    "question" : "Is this a test question 5 ?",
+    "response" : "Yes it is !"
+}
+
+###
+
+PATCH http://localhost:3000/faq HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":2,
+    "question" : "Is this an update of question 2 ?",
+    "response" : "Yes it is !"
+} 
+
+###
+DELETE http://localhost:3000/faq HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":3
+}
 //GET https://example.com/comments/1 HTTP/1.1

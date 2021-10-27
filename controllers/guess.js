@@ -1,11 +1,13 @@
 /* This file is a controler for guess */
 require('dotenv').config()
 const Account = require('../models/account');
+const Faq = require('../models/faq');
 const connect_db = require('../database/db_connect_V3');
 const { DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const session = require('express-session');
+const connect = require('../database/db_connect_V3');
 
 var ssn;
 
@@ -23,7 +25,18 @@ const getHome = (req, res) =>{
 }
 
 const getFaq = (req, res) =>{
-    res.render('faq');
+    var connection = connect_db();
+
+    const faq = Faq(connection,DataTypes);
+    
+    faq.findAll()
+    .then((questions)=>{
+        connection.close()
+        res.render('faq',{questions:questions})
+    })
+    .catch((err)=>{
+        res.render('error',{errors:err})
+    }) 
 }
 
 const getRegistration = (req, res) =>{
@@ -48,6 +61,7 @@ const createUser =  (req,res) =>{
     
     account.findOne({ where: { email: req.body.email } })
     .then( (alreadyExist)=>{
+        console.log('entrer')
         if(alreadyExist === null){
             account.create({
                 firstName: req.body.firstname,
@@ -116,6 +130,64 @@ const logout = (req, res) => {
       }); 
 }
 
+const putFaq = (req, res) =>{
+
+    var connection = connect_db();
+    const faq = Faq(connection,DataTypes);
+    faq.create({
+        question:req.body.question,
+        response:req.body.response
+    })
+    .then(()=>{
+        console.log(connection.ValidationError);
+        connection.close();
+    })
+    .then(()=>{
+        getFaq(req, res)
+        //res.redirect('http://localhost:3000/faq')
+        //res.render('faq');
+    })
+    .catch((err) =>{
+        connection.close();
+        res.render('error',{errors:err});
+    });
+}
+
+const patchFaq = (req, res) =>{
+    var connection = connect_db();
+    const faq = Faq(connection,DataTypes);
+    faq.update({
+        question:req.body.question,
+        response:req.body.response
+    },{
+        where:{id:req.body.id}
+    })
+    .then((questions)=>{
+        connection.close()
+        getFaq(req, res)
+        //res.render('faq',{questions:questions})
+    })
+    .catch((err) => {
+        res.render('error',{errors:err})
+    })
+}
+
+const deleteFaq = (req, res)=>{
+    var connection = connect_db();
+    const faq = Faq(connection,DataTypes);
+    faq.destroy({
+        where:{id:req.body.id}
+    })
+    .then((questions)=>{
+        connection.close()
+        getFaq(req, res)
+        //res.render('faq',{questions:questions})
+    })
+    .catch((err)=>{
+        res.render('error',{errors:err})
+    })
+}
+
 module.exports = {
     getHome:getHome,
     getFaq:getFaq,
@@ -124,5 +196,8 @@ module.exports = {
     getLogin:getLogin,
     createUser:createUser,
     logUser:logUser,
-    logout:logout
+    logout:logout,
+    putFaq:putFaq,
+    patchFaq:patchFaq,
+    deleteFaq:deleteFaq
 }
