@@ -41,40 +41,40 @@ const getLogin = (req, res) =>{
 //create user
 const createUser =  (req,res) =>{
 
-    console.log(`Lets create the user ${req.body.firstName}`);
+    console.log(`Lets create the user ${req.body.firstname}`);
     var connection = connect_db();
 
     const account = Account(connection,DataTypes);
     
-    const alreadyExist = account.findOne({ where: { email: req.body.email } })
-    
-    if(alreadyExist === null){
-        account.create({
-            firstName: req.body.firstName,
-            lastName:  req.body.lastName,
-            email: req.body.email,
-            passphrase: bcrypt.hashSync(req.body.passphrase,  bcrypt.genSaltSync(10)),
-            school: req.body.school,
-            birthday: req.body.birthday,
-            state_id: 1,
-            permission_id: 1,
-            gender_id: 1
-        })
-        .then(() =>{
-            console.log(connection.ValidationError);
-            connection.close();
-        })
-        .then(()=>{
-            res.render('HomePage');
-        })
-        .catch((err) =>{
-            connection.close();
-            res.render('error',{errors:err});
-        });
-    }else{
-        res.render('connexion');
-    }
-    
+    account.findOne({ where: { email: req.body.email } })
+    .then( (alreadyExist)=>{
+        if(alreadyExist === null){
+            account.create({
+                firstName: req.body.firstname,
+                lastName:  req.body.lastname,
+                email: req.body.email,
+                passphrase: bcrypt.hashSync(req.body.passphrase,  bcrypt.genSaltSync(10)),
+                school: req.body.school,
+                birthday: req.body.birthday,
+                state_id: 1,
+                permission_id: 1,
+                gender_id: 1
+            })
+            .then(() =>{
+                console.log(connection.ValidationError);
+                connection.close();
+            })
+            .then(()=>{
+                res.render('HomePage');
+            })
+            .catch((err) =>{
+                connection.close();
+                res.render('error',{errors:err});
+            });
+        }else{
+            res.render('connexion');
+        }
+    })
 }
 
 const logUser = async (req,res) =>{
@@ -83,18 +83,27 @@ const logUser = async (req,res) =>{
     //Get user data (id, permission)
     var connection = connect_db();
     const account = Account(connection,DataTypes);
-    
+
     await account.findOne({
-        where: { email: req.body.email }
+        where: {email: req.body.email}
     })
-    .then( (user) => {
-        
-        req.session.user = user
+    .then( (user) => {
+    
+        bcrypt.compare(req.body.passphrase, user.passphrase, function(err, result) {
+            if(result){
+                req.session.user = user
+                res.render('HomePage');
+            }else{
+                console.log('test 1')
+                res.render('error',{errors:err})
+            }
+        });
     })
     .catch((err)=>{
-        res.send('error',{errors:err})
+        console.log('ERROR')
+        console.log(err)
+        res.render('error',{errors:err})
     })
-    res.render('faq');
 }
 
 const logout = (req, res) => {
